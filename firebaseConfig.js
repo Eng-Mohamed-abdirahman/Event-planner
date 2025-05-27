@@ -1,23 +1,17 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getDatabase } from "firebase/database";
+import Config from "react-native-config";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAUCOZg5wgY3-DDshVxlTP82Nv--cUpU4I",
-  authDomain: "final-project-a8e6b.firebaseapp.com",
-  projectId: "final-project-a8e6b",
-  storageBucket: "final-project-a8e6b.firebasestorage.app",
-  messagingSenderId: "194998643982",
-  appId: "1:194998643982:web:edbee94c81bb8282d53b5f"
+  apiKey: Config.FIREBASE_API_KEY,
+  authDomain: Config.FIREBASE_AUTH_DOMAIN,
+  projectId: Config.FIREBASE_PROJECT_ID,
+  storageBucket: Config.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: Config.FIREBASE_MESSAGING_SENDER_ID,
+  appId: Config.FIREBASE_APP_ID,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
 
-
-
-const database = getDatabase(app)
-
-export {app,database}
+export { app, database };
